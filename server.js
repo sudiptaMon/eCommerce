@@ -49,9 +49,6 @@ app.use(
 );
 
 app.get("/", (req, res) => {
-  // console.log(req.session.username);
-  // console.log(req.session.position);
-  // req.session.cart=[];
   if (req.session.position == "admin") {
     res.redirect("/admin");
   }
@@ -66,8 +63,8 @@ app.get("/", (req, res) => {
 });
 
 app.get("/admin", (req, res) => {
-  console.log(req.session.username);
-  console.log(req.session.position);
+  // console.log(req.session.username);
+  // console.log(req.session.position);
   if (req.session.position == "admin") {
     productdata
       .find({})
@@ -232,7 +229,7 @@ app.post("/deleteaccount", (req, res) => {
     ) { 
       res.render("delete", { message: "Password dose not match" });
     } else {
-      userdata.deleteOne({ username: username });
+      userdata.deleteOne({ username: username })  ;
       req.session.destroy();
       console.log("Deleted");
       res.redirect("/");
