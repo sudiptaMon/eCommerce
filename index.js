@@ -8,6 +8,7 @@ const bodyparser = require("body-parser");
 const client = require("mongodb").MongoClient;
 const multer = require("multer");
 const time = 1000 * 24 * 60 * 60;
+const port =process.env.PORT || 5000;
 const { ObjectId } = require("mongodb");
 const publish_key =
   "pk_test_51OufVpSGE6lcza02XzMY8CCVZgwNgb2nTV2Pd257VNjrPqB0VPDKj5e8aCDx5n1fDvFX4QGJkyVbE2ZAVEBqzFzR006gzCSbFB";
@@ -704,6 +705,6 @@ app.get("/admin/deleteproduct",(req,res)=>{
 //   }
 // })
 
-app.listen(5000, () => {
+app.listen(port, () => {
   console.log("server started");
 });
