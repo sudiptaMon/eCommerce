@@ -25,7 +25,7 @@ let orderdata;
 client
   .connect("mongodb+srv://mondalsudipta678:HGnBYRygeOA6cKC9@cluster0.q7dpn.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0")
   .then((database) => {
-    console.log("Database Connexted");
+    console.log("Database Connected");
     listinstance = database.db("E_Com");
     userdata = listinstance.collection("userlist");
     productdata = listinstance.collection("product");
@@ -37,7 +37,7 @@ client
   });
 
 app.set("view engine", "ejs");
-app.use(express.urlencoded());
+app.use(express.urlencoded({extended: true}));
 app.use(bodyparser.json());
 app.use(cookieParser());
 app.use(
