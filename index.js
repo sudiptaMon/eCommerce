@@ -23,7 +23,7 @@ let admindata;
 let orderdata;
 
 client
-  .connect("mongodb://localhost:27017")
+  .connect("mongodb+srv://mondalsudipta678:HGnBYRygeOA6cKC9@cluster0.q7dpn.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0")
   .then((database) => {
     console.log("Database Connexted");
     listinstance = database.db("E_Com");
